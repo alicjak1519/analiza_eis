@@ -10,9 +10,6 @@ lb = [];
 ub = [];
 
 [result, lb, ub]=str_to_vector(modules, parameters, lb, ub);
-result;plot(real(sumOfZZ),-imag(sumOfZZ),'bo')
-xlabel("Z'")
-ylabel("-Z''")
 
 
 % save('wyniki_symulacji_PP', 'result');
@@ -22,7 +19,6 @@ function [ vector_of_parameter, lb, ub ] = str_to_vector(modules, parameters, lb
 
 number_of_modules = length(modules);
 actual_index = 1;
-oblicz_impedancje_S
 i = 0:0.1:6;
 i = i';
 w = 10.^i;
@@ -67,22 +63,16 @@ for sign = 1:number_of_modules
             actual_index = actual_index + 1;
             
         case 'S'
-            s = 10^(parameters(actual_index));
+            A = 10^(parameters(actual_index));
+            Y0 = 10^(parameters(actual_index +1));
             ZZ = getZfromS(A, Y0, w);
-            actual_index = actual_index + 1;
+            actual_index = actual_index + 2;
             
             lb = [lb, -11];
             ub = [ub, -2];
     end
     
     sumOfZZ = sumOfZZ + ZZ;
-%     plot(real(sumplot(real(sumOfZZ),-imag(sumOfZZ),'bo')
-% xlabel("Z'")
-% ylabel("-Z''")
-% OfZZ),-imag(sumOfZZ),'bo')
-% xlabel("Z'")
-% ylabel("-Z''")
-
 
 end
 
