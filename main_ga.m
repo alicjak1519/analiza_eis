@@ -17,16 +17,14 @@ czestotliwosci = wczytaj_czestotliwosci(sciezka_pliku);
 %% Optymalizacja
 
 for numer_pomiaru = 1:liczba_pomiarow
-% numer_pomiaru = input("Podaj numer pomiaru ")
+% numer_pomialength(parametry)ru = input("Podaj numer pomiaru ")
 % numer_pomiaru = 1;
 
 Z_exp = Z_exp_calosc(numer_pomiaru).imp;
 
 suma_bledow = @(parametry) oblicz_sume_bledow(Z_exp, moduly, parametry, czestotliwosci);
-[dolna_granica, gorna_granica] = wyznacz_granice(moduly);
-optionsN = optimoptions('fmincon');
 
-wektor_parametrow = fmincon(suma_bledow, parametry, [], [], [], [], dolna_granica, gorna_granica, [], optionsN);
+[dolna_granica, gorna_granica] = wyznacz_granice(moduly);
 
 ga_wektor_parametrow = ga(suma_bledow, length(parametry), [], [],[] ,[], dolna_granica, gorna_granica);
 

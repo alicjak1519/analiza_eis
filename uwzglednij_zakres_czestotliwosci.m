@@ -18,7 +18,7 @@ for licznik = 1:liczba_pomiarow
     
 end
 
-wiersze_poza_zakresem = any(isnan(wynik(numer_pomiaru).impedancja.czestotliwosc),2);
+wiersze_poza_zakresem = any(isnan(wynik(numer_pomiaru).impedancja.czestotliwosc),2)
 wynik(numer_pomiaru).impedancja.czestotliwosc(wiersze_poza_zakresem,:) = [];
 wynik(numer_pomiaru).impedancja.Z_sym(wiersze_poza_zakresem,:) = [];
 wynik(numer_pomiaru).impedancja.Z_exp(wiersze_poza_zakresem,:) = [];

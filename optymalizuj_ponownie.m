@@ -16,4 +16,10 @@ wynik(numer_pomiaru).wektor = wektor_parametrow;
 wynik(numer_pomiaru).blad = blad_bezwzgledny;
 wynik(numer_pomiaru).impedancja.Z_sym = Z_sym;
 
+
+% plot(real(Z_exp),-imag(Z_exp),'r.', real(Z_sym),-imag(Z_sym),'bo')
+% xlabel("Z'")
+% ylabel("-Z''")
+
+
 end
