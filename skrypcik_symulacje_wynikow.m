@@ -2,10 +2,10 @@ clc;
 clear;
 
 % modules = input("Give a string ", 's');
-modules='S';
+modules='PP';
 
 % parameters = input("Give parameters in square brackets (P = R C) ");
-parameters=[ -4, 0.4 ];
+parameters=[ 2, -8, 2, -9 ];
 lb = [];
 ub = [];
 
