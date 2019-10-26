@@ -47,6 +47,4 @@ end
 
 Z_sym = wynik_symulacji;
 
-% plot(real(sumOfZZ),-imag(sumOfZZ))
-
 end

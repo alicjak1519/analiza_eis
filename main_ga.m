@@ -1,4 +1,4 @@
-function wynik = main_ga(sciezka_pliku, moduly)
+function wynik = main_ga(sciezka_pliku, moduly, dolna_granica, gorna_granica)
 
 %% Wczytywanie wynikow z pomiarow
 
@@ -18,8 +18,6 @@ for numer_pomiaru = 1:liczba_pomiarow
     Z_exp = Z_exp_calosc(numer_pomiaru).imp;
 
     suma_bledow = @(parametry) oblicz_sume_bledow(Z_exp, moduly, parametry, czestotliwosci);
-
-    [dolna_granica, gorna_granica] = wyznacz_granice(moduly);
 
     ga_wektor_parametrow = ga(suma_bledow, liczba_parametrow, [], [],[] ,[], dolna_granica, gorna_granica);
 
