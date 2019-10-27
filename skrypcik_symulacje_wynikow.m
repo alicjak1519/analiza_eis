@@ -5,7 +5,7 @@ clear;
 modules='PP';
 
 % parameters = input("Give parameters in square brackets (P = R C) ");
-parameters=[ 2, -8, 2, -9 ];
+parameters=[ 3, -9, 3, -4 ];
 lb = [];
 ub = [];
 
@@ -82,16 +82,26 @@ vector_of_parameter = sumOfZZ;
 
 % Nyquist
 
-plot(real(sumOfZZ),-imag(sumOfZZ),'bo')
-xlabel("Z'")
-ylabel("-Z''")
+% plot(real(sumOfZZ),-imag(sumOfZZ),'bo')
+% xlabel("Z'")
+% ylabel("-Z''")
 
 % Bode
 % 
-% module = sqrt((real(sumOfZZ)).^2 + (imag(sumOfZZ)).^2);
-% plot(log10(module), log10(w/(2*pi)));
-% xlabel("log(f)")
-% ylabel("log(|Z|)")
+module = sqrt((real(sumOfZZ)).^2 + (imag(sumOfZZ)).^2);
+subplot(2,1,1);
+plot(log10(w/(2*pi)), log10(module), 'bo');
+xlabel("log(f)")
+ylabel("log(|Z|)")
+
+
+
+phase = atan((imag(sumOfZZ))./real(sumOfZZ));
+subplot(2,1,2);
+plot(log10(w/(2*pi)), phase, 'bo');
+xlabel("log(f)")
+ylabel("\phi")
+
 
 function ZC = getZfromC(C,w)
 

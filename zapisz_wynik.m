@@ -1,5 +1,5 @@
 function zapisz_wynik(nazwa)
 
-save(nazwa)
+    save(nazwa);
 
 end
