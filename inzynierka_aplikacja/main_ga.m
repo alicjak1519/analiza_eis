@@ -2,8 +2,8 @@ function wynik = main_ga(sciezka_pliku, moduly, dolna_granica, gorna_granica)
 
 %% Wczytywanie wynikow z pomiarow
 
-[Z_exp_calosc, liczba_pomiarow] = wczytaj_LRC(sciezka_pliku);
-czestotliwosci = wczytaj_czestotliwosci(sciezka_pliku);
+[Z_exp_calosc, liczba_pomiarow] = wczytaj_LRC2(sciezka_pliku);
+czestotliwosci = wczytaj_czestotliwosci2(sciezka_pliku);
 
 %% Dane do symulacji
 

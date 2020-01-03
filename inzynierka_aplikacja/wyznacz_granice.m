@@ -26,6 +26,6 @@ for litera = 1:liczba_modulow
         case 'P'
             lb = [lb 0, -11];
             ub = [ub 7, -3];
-    end
+        end
 end
 end
