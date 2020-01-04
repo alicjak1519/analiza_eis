@@ -2,10 +2,10 @@ clc;
 clear;
 
 % modules = input("Give a string ", 's');
-modules='PP';
+modules='RS';
 
 % parameters = input("Give parameters in square brackets (P = R C) ");
-parameters=[ 2, -6, 2, -8 ];
+parameters=[ 3, -6 ];
 lb = [];
 ub = [];
 
@@ -19,7 +19,7 @@ function [ vector_of_parameter, lb, ub ] = str_to_vector(modules, parameters, lb
 
 number_of_modules = length(modules);
 actual_index = 1;
-i = 1:0.1:log10(5*10^6);
+i = 0:0.1:6;
 i = i';
 w = 10.^i;
 
@@ -111,7 +111,7 @@ end
 
 function ZS = getZfromS(A,Y0,w)
 
-ZS = 1./((1j*w).^A *Y0 )
+ZS = 1./((1j*w).^A *Y0 );
 
 end
 
@@ -141,7 +141,7 @@ end
 
 function ZW = getZfromW(Z0,w)
  
-ZW = ((1 - 1j)*Z0)./sqrt(w)
+ZW = ((1 - 1j)*Z0)./sqrt(w);
  
 end
 
