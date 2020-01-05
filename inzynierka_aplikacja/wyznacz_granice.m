@@ -12,7 +12,7 @@ for litera = 1:liczba_modulow
             lb = [lb, 0];
             ub = [ub, 7];
         case 'C'
-            lb = [lb, -11];
+            lb = [lb, -20];
             ub = [ub, -5];
         
         case 'W'
@@ -24,7 +24,7 @@ for litera = 1:liczba_modulow
             ub = [ub, -5];
             
         case 'P'
-            lb = [lb 0, -11];
+            lb = [lb 0, -20];
             ub = [ub 7, -3];
         end
 end
