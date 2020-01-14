@@ -9,10 +9,11 @@ for litera = 1:liczba_modulow
     
     switch moduly(litera)
         case 'R'
-            lb = [lb, 0];
+            lb = [lb, -10];
             ub = [ub, 7];
+            
         case 'C'
-            lb = [lb, -20];
+            lb = [lb, -10];
             ub = [ub, -5];
         
         case 'W'
@@ -20,11 +21,11 @@ for litera = 1:liczba_modulow
             ub = [ub, -3];
             
         case 'S'
-            lb = [lb, -11];
-            ub = [ub, -5];
+            lb = [lb, 0, -11];
+            ub = [ub, 1, 0];
             
         case 'P'
-            lb = [lb 0, -20];
+            lb = [lb 0, -10];
             ub = [ub 7, -3];
         end
 end

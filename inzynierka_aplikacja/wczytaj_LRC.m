@@ -6,16 +6,12 @@ function [wynik_pomiaru, liczba_pomiarow] = wczytaj_LRC(filename)
 startRow = 18;
 
 %% Read columns of data as text:
-% For more information, see the TEXTSCAN documentation.
 formatSpec = '%16s%17s%17s%22s%[^\n\r]';
 
 %% Open the text file.
 fileID = fopen(filename,'r');
 
 %% Read columns of data according to the format.
-% This call is based on the structure of the file used to generate this
-% code. If an error occurs for a different file, try regenerating the code
-% from the Import Tool.
 dataArray = textscan(fileID, formatSpec, 'Delimiter', '', 'WhiteSpace', '', 'TextType', 'string', 'HeaderLines', startRow-1, 'ReturnOnError', false, 'EndOfLine', '\r\n');
 
 %% Close the text file.

@@ -27,8 +27,8 @@ for sign = 1:liczba_modulow
             
         
         case 'S'
-            A = 10^(parametry(aktualny_indeks));
-            Y0 = 10^(parametry(aktualny_indeks));
+            A = parametry(aktualny_indeks);
+            Y0 = 10^(parametry(aktualny_indeks + 1));
             impedancja_pomiaru = oblicz_impedancje_S(A,Y0, w);
             aktualny_indeks = aktualny_indeks + 2;
 
