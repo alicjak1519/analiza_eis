@@ -31,12 +31,20 @@ for sign = 1:liczba_modulow
             Y0 = 10^(parametry(aktualny_indeks + 1));
             impedancja_pomiaru = oblicz_impedancje_S(A,Y0, w);
             aktualny_indeks = aktualny_indeks + 2;
-
+            
+        case 'X'
+            R = 10^parametry(aktualny_indeks);
+            A = parametry(aktualny_indeks+1);
+            Y0 = 10^(parametry(aktualny_indeks + 2));
+            impedancja_pomiaru = oblicz_impedancje_X(R,A,Y0, w);
+            aktualny_indeks = aktualny_indeks + 3;
+            
         case 'P'
-            r = 10^(parametry(aktualny_indeks));
-            c = 10^(parametry(aktualny_indeks + 1));
-            impedancja_pomiaru = oblicz_impedancje_P(r, c, w);
-            aktualny_indeks = aktualny_indeks + 2;
+            R = 10^parametry(aktualny_indeks);
+            A = parametry(aktualny_indeks+1);
+            Y0 = 10^(parametry(aktualny_indeks + 2));
+            impedancja_pomiaru = oblicz_impedancje_P(R,A,Y0, w);
+            aktualny_indeks = aktualny_indeks + 3;
             
     end
     

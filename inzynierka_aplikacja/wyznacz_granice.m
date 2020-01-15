@@ -24,9 +24,12 @@ for litera = 1:liczba_modulow
             lb = [lb, 0, -11];
             ub = [ub, 1, 0];
             
+        case 'X'
+            lb = [lb, -10, 0, -11];
+            ub = [ub, 7, 2, 0];
+            
         case 'P'
-            lb = [lb 0, -10];
-            ub = [ub 7, -3];
+            lb = [lb, 0, 0, -10];
+            ub = [ub, 7, 1, -5];
         end
-end
 end
